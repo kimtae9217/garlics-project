@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Timer timer;
     Community community;
     Setting setting;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         //프래그먼트 생성
-        profile = new Profile();
         timer = new Timer();
+        profile = new Profile();
         community = new Community();
         setting = new Setting();
+
 
         //제일 처음 띄워줄 뷰를 세팅해줍니다. commit();까지 해줘야 합니다.
         getSupportFragmentManager().beginTransaction().replace(R.id.main_layout, timer).commitAllowingStateLoss();
@@ -35,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     //menu_bottom.xml에서 지정해줬던 아이디 값을 받아와서 각 아이디값마다 다른 이벤트를 발생시킵니다.
                     case R.id.tab1:{ getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.main_layout, profile).commitAllowingStateLoss();
+                            .replace(R.id.main_layout, timer).commitAllowingStateLoss();
                     return true; }
                     case R.id.tab2:{ getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.main_layout,timer).commitAllowingStateLoss();
+                            .replace(R.id.main_layout,profile).commitAllowingStateLoss();
                     return true; }
                     case R.id.tab3:{ getSupportFragmentManager().beginTransaction()
                             .replace(R.id.main_layout, community).commitAllowingStateLoss();
