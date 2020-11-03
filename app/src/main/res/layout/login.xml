@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/마늘 이미지"
+        android:id="@+id/login_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="132dp"
@@ -19,10 +19,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.263"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:src="@drawable/garlic" />
 
     <TextView
-        android:id="@+id/textView19"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="36dp"
@@ -35,7 +35,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/login_id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID를 입력하세요."
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView21"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PW"
@@ -58,7 +58,7 @@
         app:layout_constraintVertical_bias="0.57" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/login_pw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PW를 입력하세요."
@@ -70,7 +70,7 @@
         app:layout_constraintVertical_bias="0.57" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/login_loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="로그인"
@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.551" />
 
     <CheckBox
-        android:id="@+id/checkBox"
+        android:id="@+id/login_autoLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="자동 로그인"
@@ -94,7 +94,7 @@
         app:layout_constraintVertical_bias="0.66" />
 
     <CheckBox
-        android:id="@+id/checkBox2"
+        android:id="@+id/login_saveId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID 저장"
@@ -106,7 +106,7 @@
         app:layout_constraintVertical_bias="0.66" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/login_singUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="회원가입"
@@ -118,7 +118,7 @@
         app:layout_constraintVertical_bias="0.815" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/login_searchId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ID 찾기"
@@ -129,7 +129,7 @@
         app:layout_constraintVertical_bias="0.815" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/login_serchPw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="pw 찾기"

@@ -35,10 +35,10 @@ public class MainActivity extends AppCompatActivity {
                 switch (menuItem.getItemId()){
                     //menu_bottom.xml에서 지정해줬던 아이디 값을 받아와서 각 아이디값마다 다른 이벤트를 발생시킵니다.
                     case R.id.tab1:{ getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.main_layout, profile).commitAllowingStateLoss();
+                            .replace(R.id.main_layout, timer).commitAllowingStateLoss();
                     return true; }
                     case R.id.tab2:{ getSupportFragmentManager().beginTransaction()
-                            .replace(R.id.main_layout,timer).commitAllowingStateLoss();
+                            .replace(R.id.main_layout,profile).commitAllowingStateLoss();
                     return true; }
                     case R.id.tab3:{ getSupportFragmentManager().beginTransaction()
                             .replace(R.id.main_layout, community).commitAllowingStateLoss();
