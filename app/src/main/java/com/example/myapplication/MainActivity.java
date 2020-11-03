@@ -13,6 +13,7 @@ public class MainActivity extends AppCompatActivity {
     Timer timer;
     Community community;
     Setting setting;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,10 +21,11 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
 
         //프래그먼트 생성
-        profile = new Profile();
         timer = new Timer();
+        profile = new Profile();
         community = new Community();
         setting = new Setting();
+
 
         //제일 처음 띄워줄 뷰를 세팅해줍니다. commit();까지 해줘야 합니다.
         getSupportFragmentManager().beginTransaction().replace(R.id.main_layout, timer).commitAllowingStateLoss();
