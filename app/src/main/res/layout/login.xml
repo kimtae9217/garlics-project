@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/마늘 이미지"
+        android:id="@+id/garlic"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="132dp"
