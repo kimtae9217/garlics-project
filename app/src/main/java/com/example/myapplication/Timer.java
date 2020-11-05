@@ -36,7 +36,7 @@ public class Timer extends Fragment {
 
         chronometer = (Chronometer)viewGroup.findViewById(R.id.chronometer);
         btStart = (ImageButton) viewGroup.findViewById(R.id.bt_start);
-        btPause = (ImageButton)viewGroup.findViewById(R.id.bt_stop);
+        btPause = (ImageButton)viewGroup.findViewById(R.id.bt_pause);
         btStop = (ImageButton)viewGroup.findViewById(R.id.bt_stop);
         icanchor = (ImageView)viewGroup.findViewById(R.id.icanchor);
 
@@ -47,6 +47,7 @@ public class Timer extends Fragment {
         btStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                btPause.setVisibility(View.INVISIBLE);
                 icanchor.startAnimation(roundingalone); //Animation Start
 
                 if(!isResume){
@@ -55,12 +56,12 @@ public class Timer extends Fragment {
                     chronometer.start();
                     isResume = true;
                     btStop.setVisibility(View.GONE);
-//                    btPause.setVisibility(View.GONE);
+                    btPause.setVisibility(View.GONE);
                     btStart.setImageDrawable(getResources().getDrawable(
                             R.drawable.ic_pause
                     ));
                 }else {
-                    icanchor.getAnimation().cancel();
+//                    icanchor.getAnimation().cancel();
                     tBuff += tMilliSec;
                     handler.removeCallbacks(runnable);
                     chronometer.stop();
