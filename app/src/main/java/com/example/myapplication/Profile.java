@@ -73,6 +73,10 @@ public class Profile extends Fragment  {
             }
         });
 
+        imageView.setImageResource(mImageCaptureUri);
+
+
+
 
 
         return viewGroup;
