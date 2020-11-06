@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+=======
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+>>>>>>> de439078f3d80430e6b208b34f75adbb923d3b3e
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     >
 
 <LinearLayout
@@ -18,20 +23,71 @@
     android:orientation="vertical"
     tools:context=".MainActivity"
     >
+=======
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="#211D44"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/bgcircle"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="64dp"
+        android:src="@drawable/bgcircle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/icanchor"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginRight="64dp"
+        android:src="@drawable/icanchor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> de439078f3d80430e6b208b34f75adbb923d3b3e
 
     <Chronometer
+        android:id="@+id/chronometer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
 
         android:id="@+id/chronometer"
+=======
+        android:layout_marginTop="24dp"
+>>>>>>> de439078f3d80430e6b208b34f75adbb923d3b3e
         android:format="00:00:00"
+        android:textColor="@android:color/white"
         android:textSize="40dp"
         android:textStyle="bold"
-        android:textColor="@android:color/white"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bgcircle" />
 
-    <LinearLayout
+    <ImageButton
+        android:id="@+id/bt_stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:src="@drawable/ic_stop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.549"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/bt_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+<<<<<<< HEAD
         android:layout_marginTop="10dp">
         <ImageButton
             android:layout_width="wrap_content"
@@ -58,4 +114,26 @@
     </LinearLayout>
 
 </LinearLayout>
+=======
+        android:background="@android:color/white"
+        android:src="@drawable/ic_pause"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/bt_stop"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer" />
+
+    <ImageButton
+        android:id="@+id/bt_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/teal_200"
+        android:src="@drawable/ic_play"
+        app:layout_constraintEnd_toStartOf="@+id/bt_stop"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chronometer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+>>>>>>> de439078f3d80430e6b208b34f75adbb923d3b3e
 

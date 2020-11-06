@@ -17,5 +17,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+<<<<<<< HEAD
     
+=======
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+>>>>>>> de439078f3d80430e6b208b34f75adbb923d3b3e
 </androidx.constraintlayout.widget.ConstraintLayout>
