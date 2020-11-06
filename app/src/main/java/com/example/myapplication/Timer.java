@@ -30,16 +30,15 @@ public class Timer extends Fragment {
     ViewGroup viewGroup;
 
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.timer, container, false);
-        chronometer = (Chronometer)viewGroup.findViewById(R.id.chronometer);
+        chronometer = (Chronometer) viewGroup.findViewById(R.id.chronometer);
         btStart = (ImageButton) viewGroup.findViewById(R.id.bt_start);
-        btPause = (ImageButton)viewGroup.findViewById(R.id.bt_pause);
-        btStop = (ImageButton)viewGroup.findViewById(R.id.bt_stop);
-        icanchor = (ImageView)viewGroup.findViewById(R.id.icanchor);
+        btPause = (ImageButton) viewGroup.findViewById(R.id.bt_pause);
+        btStop = (ImageButton) viewGroup.findViewById(R.id.bt_stop);
+        icanchor = (ImageView) viewGroup.findViewById(R.id.icanchor);
 
         roundingalone = AnimationUtils.loadAnimation(getActivity(), R.anim.roundingalone);
 
@@ -51,7 +50,7 @@ public class Timer extends Fragment {
                 btPause.setVisibility(View.INVISIBLE);
                 icanchor.startAnimation(roundingalone); //Animation Start
 
-                if(!isResume){
+                if (!isResume) {
                     tStart = SystemClock.uptimeMillis();
                     handler.postDelayed(runnable, 0);
                     chronometer.start();
@@ -61,7 +60,7 @@ public class Timer extends Fragment {
                     btStart.setImageDrawable(getResources().getDrawable(
                             R.drawable.ic_pause
                     ));
-                }else {
+                } else {
 //                    icanchor.getAnimation().cancel();
                     tBuff += tMilliSec;
                     handler.removeCallbacks(runnable);
@@ -79,7 +78,7 @@ public class Timer extends Fragment {
             @Override
             public void onClick(View v) {
                 icanchor.clearAnimation(); //Animation Stop
-                if (!isResume){
+                if (!isResume) {
                     btStart.setImageDrawable(getResources().getDrawable(
                             R.drawable.ic_play
                     ));
@@ -97,3 +96,18 @@ public class Timer extends Fragment {
         });
         return viewGroup;
     }
+
+    public Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            tMilliSec = SystemClock.uptimeMillis() - tStart;
+            tUpadate = tBuff + tMilliSec;
+            sec = (int) (tUpadate / 1000);
+            min = sec / 60;
+            sec = sec % 60;
+            milliSec = (int) (tUpadate % 100);
+            chronometer.setText(String.format("%02d", min) + ":" + String.format("%02d", sec) + ":" + String.format("%02d", milliSec));
+            handler.postDelayed(this, 60);
+        }
+    };
+}
