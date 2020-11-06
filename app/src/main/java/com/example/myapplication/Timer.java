@@ -1,5 +1,10 @@
 package com.example.myapplication;
 
+<<<<<<< HEAD
+=======
+import android.app.Activity;
+import android.os.Build;
+>>>>>>> refs/remotes/origin/master
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -12,6 +17,11 @@ import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
+<<<<<<< HEAD
+=======
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+>>>>>>> refs/remotes/origin/master
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -44,6 +54,7 @@ public class Timer extends Fragment {
         handler = new Handler();
 
         btStart.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
                 btPause.setVisibility(View.INVISIBLE);
@@ -56,9 +67,13 @@ public class Timer extends Fragment {
                     isResume = true;
                     btStop.setVisibility(View.GONE);
                     btPause.setVisibility(View.GONE);
+<<<<<<< HEAD
                     btStart.setImageDrawable(getResources().getDrawable(
                             R.drawable.ic_pause
                     ));
+=======
+                    btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_pause, null));
+>>>>>>> refs/remotes/origin/master
                 } else {
 //                    icanchor.getAnimation().cancel();
                     tBuff += tMilliSec;
@@ -66,21 +81,24 @@ public class Timer extends Fragment {
                     chronometer.stop();
                     isResume = false;
                     btStop.setVisibility(View.VISIBLE);
-                    btStart.setImageDrawable(getResources().getDrawable(
-                            R.drawable.ic_play
-                    ));
+                    btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_play, null));
                 }
             }
         });
 
         btStop.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
                 icanchor.clearAnimation(); //Animation Stop
                 if (!isResume) {
+<<<<<<< HEAD
                     btStart.setImageDrawable(getResources().getDrawable(
                             R.drawable.ic_play
                     ));
+=======
+                    btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_play, null));
+>>>>>>> refs/remotes/origin/master
                     tMilliSec = 0L;
                     tStart = 0L;
                     tBuff = 0L;

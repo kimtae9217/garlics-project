@@ -14,10 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 public class Profile extends Fragment  {
-    private static final int REQUEST_CODE = 0;
+
+
     private Uri mImageCaptureUri;
     ImageView imageView;
     ViewGroup viewGroup;
+
     public void doTakeAlbumAction()
 
     {
@@ -26,7 +28,15 @@ public class Profile extends Fragment  {
 
         Intent intent = new Intent(Intent.ACTION_PICK);
 
-        intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+        //intent.setType(android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+
+        intent.setDataAndType(mImageCaptureUri, android.provider.MediaStore.Images.Media.CONTENT_TYPE);
+        intent.putExtra("outputX", 50);
+        intent.putExtra("outputY", 50);
+        intent.putExtra("aspectX", 1);
+        intent.putExtra("aspectY", 1);
+        intent.putExtra("scale", true);
+        intent.putExtra("return-data", true);
 
         startActivityForResult(intent, 1);
 
@@ -34,7 +44,9 @@ public class Profile extends Fragment  {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         mImageCaptureUri = data.getData();
+        imageView.setImageURI(mImageCaptureUri);
     }
+
 
 
 
@@ -43,6 +55,9 @@ public class Profile extends Fragment  {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         viewGroup = (ViewGroup) inflater.inflate(R.layout.profile, container, false);
         imageView = (ImageView) viewGroup.findViewById(R.id.profile_userPicture);
+
+
+
 
 
 
@@ -73,7 +88,7 @@ public class Profile extends Fragment  {
             }
         });
 
-        imageView.setImageResource(mImageCaptureUri);
+
 
 
 

@@ -69,15 +69,19 @@
         app:layout_constraintTop_toBottomOf="@+id/chronometer" />
 
     <ImageButton
-        android:id="@+id/bt_start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/teal_200"
-        android:src="@drawable/ic_play"
-        app:layout_constraintEnd_toStartOf="@+id/bt_stop"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/chronometer" />
+            android:id="@+id/bt_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_200"
+            android:src="@drawable/ic_play"
+            app:layout_constraintEnd_toStartOf="@+id/bt_stop"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/chronometer" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/origin/master
 
