@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -12,6 +13,8 @@ import android.view.animation.AnimationUtils;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -45,6 +48,7 @@ public class Timer extends Fragment {
         handler = new Handler();
 
         btStart.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
                 btPause.setVisibility(View.INVISIBLE);
@@ -57,9 +61,7 @@ public class Timer extends Fragment {
                     isResume = true;
                     btStop.setVisibility(View.GONE);
                     btPause.setVisibility(View.GONE);
-                    btStart.setImageDrawable(getResources().getDrawable(
-                            R.drawable.ic_pause
-                    ));
+                    btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_pause, null));
                 } else {
 //                    icanchor.getAnimation().cancel();
                     tBuff += tMilliSec;
@@ -67,21 +69,18 @@ public class Timer extends Fragment {
                     chronometer.stop();
                     isResume = false;
                     btStop.setVisibility(View.VISIBLE);
-                    btStart.setImageDrawable(getResources().getDrawable(
-                            R.drawable.ic_play
-                    ));
+                    btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_play, null));
                 }
             }
         });
 
         btStop.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
                 icanchor.clearAnimation(); //Animation Stop
                 if (!isResume) {
-                    btStart.setImageDrawable(getResources().getDrawable(
-                            R.drawable.ic_play
-                    ));
+                    btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_play, null));
                     tMilliSec = 0L;
                     tStart = 0L;
                     tBuff = 0L;
