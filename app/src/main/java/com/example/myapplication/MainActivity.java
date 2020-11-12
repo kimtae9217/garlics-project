@@ -10,7 +10,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     public static Context context;
-
     BottomNavigationView bottomNavigationView;
     Profile profile;
     Timer timer;

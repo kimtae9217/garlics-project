@@ -1,6 +1,5 @@
 package com.example.myapplication;
 
-import android.app.Activity;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -14,10 +13,9 @@ import android.widget.Chronometer;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
 public class Timer extends Fragment {
@@ -61,7 +59,13 @@ public class Timer extends Fragment {
                     isResume = true;
                     btStop.setVisibility(View.GONE);
                     btPause.setVisibility(View.GONE);
+
+                    btStart.setImageDrawable(getResources().getDrawable(
+                            R.drawable.ic_pause
+                    ));
+
                     btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_pause, null));
+
                 } else {
 //                    icanchor.getAnimation().cancel();
                     tBuff += tMilliSec;
@@ -80,6 +84,11 @@ public class Timer extends Fragment {
             public void onClick(View v) {
                 icanchor.clearAnimation(); //Animation Stop
                 if (!isResume) {
+
+                    btStart.setImageDrawable(getResources().getDrawable(
+                            R.drawable.ic_play
+                    ));
+
                     btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_play, null));
                     tMilliSec = 0L;
                     tStart = 0L;
