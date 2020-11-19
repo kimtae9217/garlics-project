@@ -7,7 +7,7 @@
     >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView123"
         android:layout_alignParentTop="true"
         android:layout_margin="10dp"
         android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/textView"
+        android:layout_below="@+id/textView123"
         android:background="@drawable/rectangle"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
