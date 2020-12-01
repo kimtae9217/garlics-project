@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.Chronometer;
 import android.widget.ImageButton;
@@ -41,6 +42,8 @@ public class Timer extends Fragment {
         btStop = (ImageButton) viewGroup.findViewById(R.id.bt_stop);
         maneul2 =(ImageView) viewGroup.findViewById(R.id.timer_maneul2);
 
+
+
         run_maneul = AnimationUtils.loadAnimation(getActivity(), R.anim.run_maneul);
         handler = new Handler();
 
@@ -49,8 +52,8 @@ public class Timer extends Fragment {
             @Override
             public void onClick(View v) {
                 btPause.setVisibility(View.INVISIBLE);
+                maneul2.startAnimation(run_maneul);//Animation Start
 
-                maneul2.startAnimation(run_maneul); //Animation Start
 
                 if (!isResume) {
                     tStart = SystemClock.uptimeMillis();
@@ -67,7 +70,7 @@ public class Timer extends Fragment {
                     btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_pause, null));
 
                 } else {
-//                    icanchor.getAnimation().cancel();
+                    maneul2.clearAnimation();
                     tBuff += tMilliSec;
                     handler.removeCallbacks(runnable);
                     chronometer.stop();

@@ -17,6 +17,11 @@
         android:usesCleartextTraffic="true"
         tools:ignore="Instantiatable">
         <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
@@ -27,11 +32,7 @@
             android:name=".SignUp"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
         <activity android:name=".MainActivity">
-         <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-         </intent-filter>
         </activity>
         <activity android:name=".Enroll_photo" />
         <activity android:name=".SetPhoto" />

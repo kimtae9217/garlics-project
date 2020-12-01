@@ -96,10 +96,10 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
-                android:fontFamily="@font/app_main_font"
                 tools:targetApi="jelly_bean" />
         </com.google.android.material.textfield.TextInputLayout>
 
