@@ -2,7 +2,7 @@
 <resources>
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="colorPrimaryDark">#FCF04D</item>
-        <item name="colorPrimary">@color/manuel</item>
+        <item name="colorPrimary">@color/maneul</item>
 
     </style>
 </resources>

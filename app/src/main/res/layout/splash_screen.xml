@@ -2,7 +2,7 @@
 
 <LinearLayout tools:context=".MainActivity"
     android:gravity="center"
-    android:background="@android:color/holo_blue_dark"
+    android:background="@color/maneul"
     android:layout_gravity="center"
     android:orientation="vertical"
     android:layout_height="match_parent"
@@ -21,20 +21,19 @@
         android:layout_width="364dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
-        android:fontFamily="@font/lilita_one"
+        android:fontFamily="@font/app_main_font"
         android:gravity="center_horizontal"
-        android:text="I Love You"
+        android:text="마음만은 늘 함께"
         android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="50sp"
-        android:textStyle="italic" />
+        android:textColor="@color/black"
+        android:textSize="50sp"/>
 
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
         android:id="@+id/textView2"
         android:textSize="15sp"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textAlignment="center"
         android:text="너 없인 살 수 없숴"
         android:layout_marginTop="10dp"

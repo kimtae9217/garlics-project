@@ -7,29 +7,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
-import android.widget.ImageView;
-import android.widget.TextView;
-=======
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-<<<<<<< HEAD
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.io.InputStream;
-
-public class Profile extends Fragment {
-
-=======
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -48,18 +35,14 @@ import java.util.Objects;
 public class Profile extends Fragment {
 
     private static final String URL = "http://61.245.248.173/garlic/insertUserDB.php";
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
     public static final int USER_PROFILE = 0;
     public static final int MORNING = 0;
     ImageView userProfile, morning, lunch, dinner, snack;
     ViewGroup viewGroup;
     Bitmap bm;
     TextView tx;
-<<<<<<< HEAD
-=======
     EditText userHeight, userWeight, userStateMessage;
     Button sbmt;
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
 
     @Nullable
     @Override
@@ -70,8 +53,6 @@ public class Profile extends Fragment {
         lunch = (ImageView) viewGroup.findViewById(R.id.profile_lunch_image);
         dinner = (ImageView) viewGroup.findViewById(R.id.profile_dinner_Image);
         snack = (ImageView) viewGroup.findViewById(R.id.profile_snack_image);
-<<<<<<< HEAD
-=======
         sbmt = (Button) viewGroup.findViewById(R.id.submit); //키, 몸무게, 상태메세지 전송 버튼
 
         sbmt.setOnClickListener(new View.OnClickListener() { // 저장 버튼 누를시 발생 이벤트
@@ -80,7 +61,6 @@ public class Profile extends Fragment {
                 insertdata();
             }
         });
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
 
 
 
@@ -88,14 +68,7 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View v) {
                 {
-<<<<<<< HEAD
-
                     doTakeAlbumAction(USER_PROFILE);
-
-
-=======
-                    doTakeAlbumAction(USER_PROFILE);
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
                 }
             }
         });
@@ -136,8 +109,6 @@ public class Profile extends Fragment {
         return viewGroup;
     }
 
-<<<<<<< HEAD
-=======
     private void insertdata() { // 키, 몸무게, 상태 데이터베이스에 저장
         userHeight=(EditText)viewGroup.findViewById(R.id.userHeight);
         userWeight=(EditText)viewGroup.findViewById(R.id.userWeight);
@@ -176,7 +147,6 @@ public class Profile extends Fragment {
     }
 
 
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
     public void doTakeAlbumAction(int num) {
 
         Intent intent = new Intent();
@@ -188,28 +158,28 @@ public class Profile extends Fragment {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if(requestCode == USER_PROFILE  )
-              {
-                InputStream is = null;
-                try {
-                    is = getActivity().getContentResolver().openInputStream(data.getData());
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
-                 bm = BitmapFactory.decodeStream(is);
-                try {
-                    is.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                userProfile.setImageBitmap(bm);
-
-            }else if(requestCode == MORNING){
-                Bundle bundle = getArguments();
-                morning.setImageBitmap(bundle.getParcelable("image"));
+        {
+            InputStream is = null;
+            try {
+                is = getActivity().getContentResolver().openInputStream(data.getData());
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            bm = BitmapFactory.decodeStream(is);
+            try {
+                is.close();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
 
-            }
+            userProfile.setImageBitmap(bm);
+
+        }else if(requestCode == MORNING){
+            Bundle bundle = getArguments();
+            morning.setImageBitmap(bundle.getParcelable("image"));
+        }
+
+    }
 
 }
 

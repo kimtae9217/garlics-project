@@ -13,8 +13,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4">
 
-<<<<<<< HEAD
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,17 +28,10 @@
             app:layout_constraintVertical_bias="0.108" />
 
 
-=======
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
         <TextView
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-<<<<<<< HEAD
-            android:layout_marginTop="56dp"
-            android:fontFamily="@font/app_main_font"
-=======
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
             android:gravity="center"
             android:text="@string/signup"
             android:textSize="30sp"
@@ -65,11 +56,6 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fullname"
-<<<<<<< HEAD
-                android:fontFamily="@font/app_main_font"
-                android:layout_marginBottom="20dp"
-=======
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:targetApi="jelly_bean" />
@@ -88,13 +74,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutFullname">
 
             <com.google.android.material.textfield.TextInputEditText
-<<<<<<< HEAD
-                android:fontFamily="@font/app_main_font"
                 android:id="@+id/email"
-                android:layout_marginBottom="20dp"
-=======
-                android:id="@+id/email"
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:targetApi="jelly_bean" />
@@ -113,13 +93,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textInputLayoutEmail">
 
             <com.google.android.material.textfield.TextInputEditText
-<<<<<<< HEAD
-                android:fontFamily="@font/app_main_font"
                 android:id="@+id/username"
-                android:layout_marginBottom="20dp"
-=======
-                android:id="@+id/username"
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:targetApi="jelly_bean" />
@@ -136,13 +110,7 @@
             tools:layout_editor_absoluteX="0dp">
 
             <com.google.android.material.textfield.TextInputEditText
-<<<<<<< HEAD
-                android:fontFamily="@font/app_main_font"
                 android:id="@+id/password"
-                android:layout_marginBottom="20dp"
-=======
-                android:id="@+id/password"
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:targetApi="jelly_bean" />
@@ -163,14 +131,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-<<<<<<< HEAD
-            android:textColor="@color/black"
-            android:fontFamily="@font/app_main_font"
             android:text="@string/signup"
-            android:background="#FAF8A4"
-=======
-            android:text="@string/signup"
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progress" />
@@ -181,10 +142,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
             android:text="@string/loginhere"
-<<<<<<< HEAD
-            android:fontFamily="@font/app_main_font"
-=======
->>>>>>> b9265c5a6384b2475887b02660199a45241234b5
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/buttonSignUp"

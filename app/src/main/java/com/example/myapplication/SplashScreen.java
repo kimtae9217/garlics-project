@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity2 extends AppCompatActivity {
+public class SplashScreen extends AppCompatActivity {
     final static int SPLASH_SCREEN =5000;
 
     ImageView imageView;
@@ -22,7 +22,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.splash_screen);
 
         imageView = findViewById(R.id.imageView);
         textView1 = findViewById(R.id.textView);
@@ -39,7 +39,7 @@ public class MainActivity2 extends AppCompatActivity {
         {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity2.this, Login.class);
+                Intent intent = new Intent(SplashScreen.this, Login.class);
                 startActivity(intent);
                 finish();
             }
