@@ -13,6 +13,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+<<<<<<< HEAD
         android:usesCleartextTraffic="true"
         android:theme="@style/Theme.Design.Light.NoActionBar"
         tools:ignore="Instantiatable">
@@ -28,6 +29,12 @@
             android:theme="@style/Theme.Design.Light.NoActionBar">
         </activity>
         <activity android:name=".MainActivity">
+=======
+        android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
+        tools:ignore="Instantiatable">
+        <activity android:name=".MainActivity2">
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,8 +42,35 @@
             </intent-filter>
         </activity>
 
+<<<<<<< HEAD
         <activity android:name=".Enroll_photo" />
         <activity android:name=".SetPhoto" />
     </application>
 
 </manifest>
+=======
+        <activity
+            android:name=".Login"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+        <activity
+            android:name=".SignUp"
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".Enroll_photo" />
+        <activity android:name=".SetPhoto" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5

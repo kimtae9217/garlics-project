@@ -23,7 +23,11 @@ public class Timer extends Fragment {
 
     ImageButton btStart, btStop, btPause;
     ImageView icanchor;
+<<<<<<< HEAD
     Animation roundingalone,run_maneul;
+=======
+    Animation roundingalone;
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
     private boolean isResume;
     Handler handler;
     long tMilliSec, tStart, tBuff, tUpadate = 0L;
@@ -43,8 +47,11 @@ public class Timer extends Fragment {
 
         roundingalone = AnimationUtils.loadAnimation(getActivity(), R.anim.roundingalone);
 
+<<<<<<< HEAD
         run_maneul = AnimationUtils.loadAnimation(getActivity(), R.anim.run_maneul);
 
+=======
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
         handler = new Handler();
 
         btStart.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +59,11 @@ public class Timer extends Fragment {
             @Override
             public void onClick(View v) {
                 btPause.setVisibility(View.INVISIBLE);
+<<<<<<< HEAD
                 icanchor.startAnimation(run_maneul); //Animation Start
+=======
+                icanchor.startAnimation(roundingalone); //Animation Start
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
 
                 if (!isResume) {
                     tStart = SystemClock.uptimeMillis();

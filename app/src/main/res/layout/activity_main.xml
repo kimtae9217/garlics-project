@@ -20,6 +20,8 @@
         android:layout_marginEnd="0dp"
         android:background="@color/manuel"
         app:itemBackground="@color/manuel"
+        android:background="@color/cardview_dark_background"
+        app:itemBackground="@color/cardview_dark_background"
         app:itemIconTint="@drawable/item_color"
         app:itemTextColor="@drawable/item_color"
         app:labelVisibilityMode="unlabeled"

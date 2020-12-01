@@ -32,12 +32,14 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
+    tools:context=".Login">
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="80dp"
         android:fontFamily="@font/app_main_font"
+        android:layout_marginTop="100dp"
         android:gravity="center"
         android:text="@string/login"
         android:textSize="30sp"
@@ -55,6 +57,12 @@
         app:layout_constraintVertical_bias="0.593"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="29dp">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.426"
+        tools:layout_editor_absoluteX="0dp">
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutUsername"
@@ -108,6 +116,7 @@
         <Button
             android:id="@+id/buttonLogin"
             style="@style/Widget.AppCompat.Button.Colored"
+<<<<<<< HEAD
             android:layout_width="143dp"
             android:layout_height="42dp"
             android:layout_marginTop="20dp"
@@ -115,6 +124,10 @@
             android:fontFamily="@font/app_main_font"
             android:text="@string/loginButton"
             android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/loginButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progress" />

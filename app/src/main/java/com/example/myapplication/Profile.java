@@ -7,25 +7,59 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+<<<<<<< HEAD
 import android.widget.ImageView;
 import android.widget.TextView;
+=======
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+<<<<<<< HEAD
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
 public class Profile extends Fragment {
 
+=======
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+
+public class Profile extends Fragment {
+
+    private static final String URL = "http://61.245.248.173/garlic/insertUserDB.php";
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
     public static final int USER_PROFILE = 0;
     public static final int MORNING = 0;
     ImageView userProfile, morning, lunch, dinner, snack;
     ViewGroup viewGroup;
     Bitmap bm;
     TextView tx;
+<<<<<<< HEAD
+=======
+    EditText userHeight, userWeight, userStateMessage;
+    Button sbmt;
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
 
     @Nullable
     @Override
@@ -36,6 +70,17 @@ public class Profile extends Fragment {
         lunch = (ImageView) viewGroup.findViewById(R.id.profile_lunch_image);
         dinner = (ImageView) viewGroup.findViewById(R.id.profile_dinner_Image);
         snack = (ImageView) viewGroup.findViewById(R.id.profile_snack_image);
+<<<<<<< HEAD
+=======
+        sbmt = (Button) viewGroup.findViewById(R.id.submit); //키, 몸무게, 상태메세지 전송 버튼
+
+        sbmt.setOnClickListener(new View.OnClickListener() { // 저장 버튼 누를시 발생 이벤트
+            @Override
+            public void onClick(View view) {
+                insertdata();
+            }
+        });
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
 
 
 
@@ -43,10 +88,14 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View v) {
                 {
+<<<<<<< HEAD
 
                     doTakeAlbumAction(USER_PROFILE);
 
 
+=======
+                    doTakeAlbumAction(USER_PROFILE);
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
                 }
             }
         });
@@ -87,6 +136,47 @@ public class Profile extends Fragment {
         return viewGroup;
     }
 
+<<<<<<< HEAD
+=======
+    private void insertdata() { // 키, 몸무게, 상태 데이터베이스에 저장
+        userHeight=(EditText)viewGroup.findViewById(R.id.userHeight);
+        userWeight=(EditText)viewGroup.findViewById(R.id.userWeight);
+        userStateMessage=(EditText)viewGroup.findViewById(R.id.userStateMessage);
+
+        final String height = userHeight.getText().toString().trim();
+        final String weight = userWeight.getText().toString().trim();
+        final String state = userStateMessage.getText().toString().trim();
+
+        StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                userHeight.setText("");
+                userWeight.setText("");
+                userStateMessage.setText("");
+                Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_LONG).show();
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_LONG).show();
+            }
+        }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> param = new HashMap<String, String>();
+                param.put("height",height);
+                param.put("weight",weight);
+                param.put("state",state);
+                return param;
+            }
+        };
+
+        RequestQueue queue = Volley.newRequestQueue(Objects.requireNonNull(getActivity()));
+        queue.add(request);
+    }
+
+
+>>>>>>> b9265c5a6384b2475887b02660199a45241234b5
     public void doTakeAlbumAction(int num) {
 
         Intent intent = new Intent();
