@@ -13,26 +13,38 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
         android:theme="@style/Theme.MyApplication"
+        android:usesCleartextTraffic="true"
         tools:ignore="Instantiatable">
-        <activity android:name=".Login"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
+        <activity android:name=".MainActivity2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".Login"
+            android:theme="@style/Theme.Design.Light.NoActionBar">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
         <activity
             android:name=".SignUp"
-            android:theme="@style/Theme.Design.Light.NoActionBar">
-        </activity>
-        <activity android:name=".MainActivity">
-        </activity>
-
+            android:theme="@style/Theme.Design.Light.NoActionBar" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".Enroll_photo" />
         <activity android:name=".SetPhoto" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
