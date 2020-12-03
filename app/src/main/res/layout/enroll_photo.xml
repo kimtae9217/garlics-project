@@ -14,7 +14,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="70dp"
         android:scaleType="fitCenter"
-        app:srcCompat="@drawable/garlic" />
+        app:srcCompat="@drawable/maneul2" />
 
     <Button
         android:id="@+id/enroll_photo_button"

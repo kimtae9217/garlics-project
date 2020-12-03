@@ -3,6 +3,7 @@
     <corners
         android:radius="6dp"/>
     <stroke
-        android:width="3dp"/>
+        android:width="3dp"
+        android:color="@color/maneul"/>
 
 </shape>

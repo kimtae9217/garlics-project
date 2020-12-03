@@ -24,7 +24,7 @@ public class SetPhoto extends Activity {
     protected void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        tx = (TextView)findViewById(R.id.textView123) ;
+
 
         Intent intent = getIntent();
 

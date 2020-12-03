@@ -17,6 +17,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 public class Timer extends Fragment {
@@ -62,13 +63,7 @@ public class Timer extends Fragment {
                     isResume = true;
                     btStop.setVisibility(View.GONE);
                     btPause.setVisibility(View.GONE);
-
-                    btStart.setImageDrawable(getResources().getDrawable(
-                            R.drawable.ic_pause
-                    ));
-
-                    btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_pause, null));
-
+                    btStart.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_pause, null));
                 } else {
                     maneul2.clearAnimation();
                     tBuff += tMilliSec;
@@ -76,7 +71,7 @@ public class Timer extends Fragment {
                     chronometer.stop();
                     isResume = false;
                     btStop.setVisibility(View.VISIBLE);
-                    btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_play, null));
+                    btStart.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_play, null));
                 }
             }
         });
@@ -87,12 +82,7 @@ public class Timer extends Fragment {
             public void onClick(View v) {
                 maneul2.clearAnimation(); //Animation Stop
                 if (!isResume) {
-
-                    btStart.setImageDrawable(getResources().getDrawable(
-                            R.drawable.ic_play
-                    ));
-
-                    btStart.setImageDrawable(getResources().getDrawable(R.drawable.ic_play, null));
+                    btStart.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_play, null));
                     tMilliSec = 0L;
                     tStart = 0L;
                     tBuff = 0L;

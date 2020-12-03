@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setting = new Setting();
 
 
+
         //제일 처음 띄워줄 뷰를 세팅해줍니다. commit();까지 해줘야 합니다.
         getSupportFragmentManager().beginTransaction().replace(R.id.main_layout, timer).commitAllowingStateLoss();
 
