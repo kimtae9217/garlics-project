@@ -188,7 +188,6 @@ public class Timer extends Fragment {
                     }
 
                 } else {
-//                    icanchor.getAnimation().cancel();
                     tBuff += tMilliSec;
                     handler.removeCallbacks(runnable);
                     chronometer.stop();
@@ -205,9 +204,7 @@ public class Timer extends Fragment {
             public void onClick(View v) {
                 maneul2.clearAnimation(); //Animation Stop
                 if (!isResume) {
-
                     btStart.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_play, null));
-
                     tMilliSec = 0L;
                     tStart = 0L;
                     tBuff = 0L;
@@ -216,11 +213,8 @@ public class Timer extends Fragment {
                     min = 0;
                     milliSec = 0;
                     chronometer.setText("00:00:00");
-
                     receiveData(); //블루투스 데이터 받아오는 기능
                     K_cal = Out_put;
-
-                    //String Out_put = Double.toString(MK);
                     textViewReceive.setText(K_cal + "\n");
 
                 }
@@ -242,7 +236,6 @@ public class Timer extends Fragment {
             bluetoothSocket.connect();
             outputStream = bluetoothSocket.getOutputStream();
             inputStream = bluetoothSocket.getInputStream();
-            //receiveData();
         } catch (IOException e) {
             e.printStackTrace();
         }
