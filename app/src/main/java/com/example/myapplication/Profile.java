@@ -121,9 +121,9 @@ public class Profile extends Fragment {
         StringRequest request = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                userHeight.setText("");
-                userWeight.setText("");
-                userStateMessage.setText("");
+//                userHeight.setText("");
+//                userWeight.setText("");
+//                userStateMessage.setText("");
                 Toast.makeText(getActivity(), response.toString(), Toast.LENGTH_LONG).show();
             }
         }, new Response.ErrorListener() {
