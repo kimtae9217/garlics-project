@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:text="@string/signup"
+            android:fontFamily="@font/app_main_font"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -56,6 +57,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/fullname"
+                android:fontFamily="@font/app_main_font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:targetApi="jelly_bean" />
@@ -75,6 +77,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/email"
+                android:fontFamily="@font/app_main_font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:targetApi="jelly_bean" />
@@ -83,9 +86,10 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutUsername"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
+            android:fontFamily="@font/app_main_font"
             android:hint="@string/username"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -94,6 +98,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/username"
+                android:fontFamily="@font/app_main_font"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:targetApi="jelly_bean" />
@@ -111,6 +116,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/password"
+                android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 tools:targetApi="jelly_bean" />
@@ -131,7 +137,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:background="#F6F6EA"
+            android:fontFamily="@font/app_main_font"
             android:text="@string/signup"
+            android:textColor="#070707"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progress" />
@@ -141,6 +150,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
+            android:fontFamily="@font/app_main_font"
             android:text="@string/loginhere"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
