@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.community;
 
 
 import android.content.Context;
@@ -8,6 +8,8 @@ import android.widget.FrameLayout;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication.R;
 
 public class CommunityGroup extends AppCompatActivity {
 

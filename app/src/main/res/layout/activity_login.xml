@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".Login">
+    tools:context=".main.Login">
 
     <ImageView
         android:layout_width="506dp"
@@ -19,19 +19,18 @@
         app:layout_constraintVertical_bias="0.726" />
 
     <ImageView
-        android:layout_width="428dp"
-        android:layout_height="575dp"
+        android:layout_width="399dp"
+        android:layout_height="728dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="340dp"
         android:src="@drawable/login_sqaure2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.166"
+        app:layout_constraintHorizontal_bias="0.214"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-    tools:context=".Login">
+        app:layout_constraintVertical_bias="0.996" />
 
     <TextView
         android:id="@+id/textView"
@@ -56,12 +55,7 @@
         app:layout_constraintVertical_bias="0.593"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="29dp">
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.426"
-        tools:layout_editor_absoluteX="0dp">
+
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutUsername"

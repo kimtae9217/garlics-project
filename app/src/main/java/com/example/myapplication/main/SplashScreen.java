@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.example.myapplication.main;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.myapplication.R;
 
 public class SplashScreen extends AppCompatActivity {
     final static int SPLASH_SCREEN =5000;

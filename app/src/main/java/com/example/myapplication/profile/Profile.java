@@ -1,9 +1,10 @@
-package com.example.myapplication;
+package com.example.myapplication.profile;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.myapplication.R;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -34,14 +36,20 @@ import java.util.Objects;
 
 public class Profile extends Fragment {
 
+
     private static final String URL = "http://61.245.248.173/garlic/insertUserDB.php";
     public static final int USER_PROFILE = 0;
-    public static final int MORNING = 0;
+    public static final int MORNING = 1;
+    public static final int LUNCH = 2;
+    public static final int DINNER = 3;
+    public static final int SNACK = 4;
     ImageView userProfile, morning, lunch, dinner, snack;
     ViewGroup viewGroup;
     Bitmap bm;
     TextView tx;
     EditText userHeight, userWeight, userStateMessage;
+    TextView morningFoodName,morningFoodCal,lunchFoodName,lunchFoodCal ,
+    dinnerFoodName, dinnerFoodCal, snackFoodName, snackFoodCal;
     Button sbmt;
 
     @Nullable
@@ -53,6 +61,16 @@ public class Profile extends Fragment {
         lunch = (ImageView) viewGroup.findViewById(R.id.profile_lunch_image);
         dinner = (ImageView) viewGroup.findViewById(R.id.profile_dinner_Image);
         snack = (ImageView) viewGroup.findViewById(R.id.profile_snack_image);
+        morningFoodName = (TextView)viewGroup.findViewById(R.id.profile_morning_foodName);
+        morningFoodCal = (TextView)viewGroup.findViewById(R.id.profile_morning_foodCal);
+        lunchFoodName = (TextView)viewGroup.findViewById(R.id.profile_lunch_foodName);
+        lunchFoodCal = (TextView)viewGroup.findViewById(R.id.profile_lunch_foodCal);
+        dinnerFoodName = (TextView)viewGroup.findViewById(R.id.profile_dinner_foodName);
+        dinnerFoodCal = (TextView)viewGroup.findViewById(R.id.profile_dinner_foodCal);
+        snackFoodName = (TextView)viewGroup.findViewById(R.id.profile_snack_foodName);
+        snackFoodCal = (TextView)viewGroup.findViewById(R.id.profile_snack_foodCal);
+
+
         sbmt = (Button) viewGroup.findViewById(R.id.submit); //키, 몸무게, 상태메세지 전송 버튼
 
         sbmt.setOnClickListener(new View.OnClickListener() { // 저장 버튼 누를시 발생 이벤트
@@ -61,7 +79,6 @@ public class Profile extends Fragment {
                 insertdata();
             }
         });
-
 
 
         userProfile.setOnClickListener(new View.OnClickListener() {
@@ -86,8 +103,7 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Enroll_photo.class);
-                startActivity(intent);
-
+                startActivityForResult(intent, LUNCH);
             }
         });
 
@@ -95,7 +111,7 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Enroll_photo.class);
-                startActivity(intent);
+                startActivityForResult(intent, DINNER);
             }
         });
 
@@ -103,16 +119,16 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Enroll_photo.class);
-                startActivity(intent);
+                startActivityForResult(intent, SNACK);
             }
         });
         return viewGroup;
     }
 
     private void insertdata() { // 키, 몸무게, 상태 데이터베이스에 저장
-        userHeight=(EditText)viewGroup.findViewById(R.id.userHeight);
-        userWeight=(EditText)viewGroup.findViewById(R.id.userWeight);
-        userStateMessage=(EditText)viewGroup.findViewById(R.id.userStateMessage);
+        userHeight = (EditText) viewGroup.findViewById(R.id.userHeight);
+        userWeight = (EditText) viewGroup.findViewById(R.id.userWeight);
+        userStateMessage = (EditText) viewGroup.findViewById(R.id.userStateMessage);
 
         final String height = userHeight.getText().toString().trim();
         final String weight = userWeight.getText().toString().trim();
@@ -131,13 +147,13 @@ public class Profile extends Fragment {
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getActivity(), error.toString(), Toast.LENGTH_LONG).show();
             }
-        }){
+        }) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> param = new HashMap<String, String>();
-                param.put("height",height);
-                param.put("weight",weight);
-                param.put("state",state);
+                Map<String, String> param = new HashMap<String, String>();
+                param.put("height", height);
+                param.put("weight", weight);
+                param.put("state", state);
                 return param;
             }
         };
@@ -155,33 +171,75 @@ public class Profile extends Fragment {
         startActivityForResult(intent, num);
     }
 
-
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == USER_PROFILE  )
-        {
-            InputStream is = null;
-            try {
-                is = getActivity().getContentResolver().openInputStream(data.getData());
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            }
-            bm = BitmapFactory.decodeStream(is);
-            try {
-                is.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            userProfile.setImageBitmap(bm);
-
-        }else if(requestCode == MORNING){
-            Bundle bundle = getArguments();
-            morning.setImageBitmap(bundle.getParcelable("image"));
+    // String으로 변환했던 비트맵을 다시 비트맵으로
+    public static Bitmap StringToBitmap(String encodedString) {
+        try {
+            byte[] encodeByte = Base64.decode(encodedString, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+            return bitmap;
+        } catch (Exception e) {
+            e.getMessage();
+            return null;
         }
-
     }
 
+
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch (requestCode) {
+            case USER_PROFILE:
+                InputStream is = null;
+                try {
+                    is = getActivity().getContentResolver().openInputStream(data.getData());
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+                bm = BitmapFactory.decodeStream(is);
+                try {
+                    is.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                userProfile.setImageBitmap(bm);
+                break;
+
+            case MORNING:
+                 bm =StringToBitmap(data.getStringExtra("picture"));
+                 morningFoodName.setText(data.getStringExtra("foodName"));
+                 morningFoodCal.setText(data.getStringExtra("foodCal"));
+                 morning.setImageBitmap(bm);
+
+
+                 break;
+
+            case LUNCH:
+                bm =StringToBitmap(data.getStringExtra("picture"));
+                lunchFoodName.setText(data.getStringExtra("foodName"));
+                lunchFoodCal.setText(data.getStringExtra("foodCal"));
+                lunch.setImageBitmap(bm);
+                break;
+
+            case DINNER:
+                bm =StringToBitmap(data.getStringExtra("picture"));
+                dinnerFoodName.setText(data.getStringExtra("foodName"));
+                dinnerFoodCal.setText(data.getStringExtra("foodCal"));
+                dinner.setImageBitmap(bm);
+                break;
+
+            case SNACK:
+                bm =StringToBitmap(data.getStringExtra("picture"));
+                snackFoodName.setText(data.getStringExtra("foodName"));
+                snackFoodCal.setText(data.getStringExtra("foodCal"));
+                snack.setImageBitmap(bm);
+                break;
+
+
+        }
+    }
 }
+
+
+
 
 
 

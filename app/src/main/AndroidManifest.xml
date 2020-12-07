@@ -16,28 +16,29 @@
         android:theme="@style/Theme.MyApplication"
         android:usesCleartextTraffic="true"
         tools:ignore="Instantiatable">
-        <activity android:name=".SplashScreen">
+        <activity android:name=".main.SplashScreen">
 
         </activity>
 
         <activity
-            android:name=".Login"
+
+            android:name=".main.Login"
             android:theme="@style/Theme.Design.Light.NoActionBar">
+
         </activity>
         <activity
-            android:name=".SignUp"
+            android:name=".main.SignUp"
             android:theme="@style/Theme.Design.Light.NoActionBar" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".Enroll_photo" />
-        <activity android:name=".SetPhoto" />
-        <activity android:name=".CommunityGroup" />
+        <activity android:name=".profile.Enroll_photo" />
+        <activity android:name=".community.CommunityGroup" />
+        <activity android:name=".community.EnrollGroup"/>
 
         <meta-data
             android:name="preloaded_fonts"
