@@ -95,7 +95,6 @@ public class Profile extends Fragment {
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), Enroll_photo.class);
                 startActivityForResult(intent, MORNING);
-
             }
         });
 
@@ -208,8 +207,6 @@ public class Profile extends Fragment {
                  morningFoodName.setText(data.getStringExtra("foodName"));
                  morningFoodCal.setText(data.getStringExtra("foodCal"));
                  morning.setImageBitmap(bm);
-
-
                  break;
 
             case LUNCH:
@@ -232,8 +229,6 @@ public class Profile extends Fragment {
                 snackFoodCal.setText(data.getStringExtra("foodCal"));
                 snack.setImageBitmap(bm);
                 break;
-
-
         }
     }
 }
