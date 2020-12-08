@@ -19,12 +19,9 @@
         <activity android:name=".main.SplashScreen">
 
         </activity>
-
         <activity
-
             android:name=".main.Login"
             android:theme="@style/Theme.Design.Light.NoActionBar">
-
         </activity>
         <activity
             android:name=".main.SignUp"
@@ -39,7 +36,6 @@
         <activity android:name=".profile.Enroll_photo" />
         <activity android:name=".community.CommunityGroup" />
         <activity android:name=".community.EnrollGroup"/>
-
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
