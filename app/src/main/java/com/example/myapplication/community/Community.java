@@ -28,6 +28,7 @@ public class Community extends Fragment{
     private LinearLayoutManager linearLayoutManager;
 
     ViewGroup viewGroup;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -35,8 +36,6 @@ public class Community extends Fragment{
         recyclerView= (RecyclerView) viewGroup.findViewById(R.id.grouop_list_rv);
         linearLayoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(linearLayoutManager);
-
-
 
         arrayList = new ArrayList<>();
         recycleAdapter = new RecycleAdapter(arrayList);
@@ -52,7 +51,6 @@ public class Community extends Fragment{
                 Intent intent = new Intent(getActivity(),EnrollGroup.class);
                 startActivityForResult(intent,CODE);
 
-
             }
         });
 
@@ -64,8 +62,6 @@ public class Community extends Fragment{
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
        switch (requestCode) {
            case CODE:
-
-
                    CommunityGroupListData communityGroupListData = new CommunityGroupListData(R.drawable.profile_profile,"그룹 이름", "그룹 인원","그룹 내용");
                    communityGroupListData.setGroup_list_name(data.getStringExtra("groupName"));
                    communityGroupListData.setGroup_list_content(data.getStringExtra("groupContents"));
