@@ -8,7 +8,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.myapplication.R;
-import com.example.myapplication.Setting;
+import com.example.myapplication.setting.Setting;
 import com.example.myapplication.Timer;
 import com.example.myapplication.community.Community;
 import com.example.myapplication.profile.Profile;

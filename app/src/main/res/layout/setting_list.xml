@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/maneul"
+    android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/setting_notice"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:fontFamily="@font/app_main_font"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="공지사항" />
+        <View
+            android:id="@+id/setting_divisionLine"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/setting_notification"
+            android:fontFamily="@font/app_main_font"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="알림설정" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/setting_changePassword"
+            android:fontFamily="@font/app_main_font"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="비밀번호 변경" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/setting_logout"
+            android:fontFamily="@font/app_main_font"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="로그아웃" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:background="@color/black"/>
+
+        <TextView
+            android:id="@+id/setting_out"
+            android:fontFamily="@font/app_main_font"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="회원탈퇴" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_margin="10dp"
+            android:layout_centerInParent="true"
+            android:background="@color/black"/>
+
+</LinearLayout>
