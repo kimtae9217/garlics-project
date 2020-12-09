@@ -9,29 +9,33 @@
         android:layout_height="match_parent"
         android:orientation="vertical" >
 
-
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:orientation="horizontal">
 
-                <TextView
-                    android:id="@+id/textView110"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="TextView" />
+            <TextView
+                android:id="@+id/textView110"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/app_main_font"
+                android:padding="15dp"
+                android:text="어서오세요 마음만은 늘 함께 입니다 !"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
-                <Button
+            <Button
                     android:id="@+id/button2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/maneul"
+                    android:fontFamily="@font/app_main_font"
+                    android:textColor="@color/black"
                     android:layout_gravity="right"
-                    android:text="Button" />
+                    android:text="그룹 게시판" />
 
         </FrameLayout>
-
 
         <FrameLayout
             android:layout_width="match_parent"
@@ -43,14 +47,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="TextView" />
+                android:fontFamily="@font/app_main_font"
+                android:text="멤버 인원 : "
+                android:textColor="@color/black"
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/maneul"
+                android:fontFamily="@font/app_main_font"
+                android:textColor="@color/black"
                 android:layout_gravity="right"
-                android:text="Button" />
+                android:text="그룹원 초대" />
         </FrameLayout>
 
 
@@ -73,11 +83,12 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:orientation="vertical">
-                <ImageView
 
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -96,10 +107,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -118,10 +129,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -148,10 +159,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -170,10 +181,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -192,10 +203,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -222,10 +233,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -244,10 +255,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -266,11 +277,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:src="@drawable/hamburger"/>
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -297,10 +307,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -319,10 +329,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -341,10 +351,10 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
                 <ImageView
-
-                    android:layout_width="wrap_content"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/hamburger"/>
+                    android:layout_gravity="center"
+                    android:src="@drawable/community_user" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
