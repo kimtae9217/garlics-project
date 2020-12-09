@@ -1,49 +1,57 @@
 package com.example.myapplication;
 
-import android.os.Build;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.SystemClock;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Chronometer;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+        import android.os.Build;
+        import android.os.Bundle;
+        import android.os.Handler;
+        import android.os.SystemClock;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.view.animation.Animation;
+        import android.view.animation.AnimationUtils;
+        import android.widget.Chronometer;
+        import android.widget.ImageButton;
+        import android.widget.ImageView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
-import androidx.core.content.res.ResourcesCompat;
-import androidx.fragment.app.Fragment;
-import android.widget.TextView;
-import android.app.Activity;
-import android.bluetooth.BluetoothAdapter;
-import android.bluetooth.BluetoothDevice;
-import android.bluetooth.BluetoothSocket;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.widget.Toast;
+        import androidx.annotation.NonNull;
+        import androidx.annotation.Nullable;
+        import androidx.annotation.RequiresApi;
+        import androidx.core.content.res.ResourcesCompat;
+        import androidx.fragment.app.Fragment;
+        import android.widget.TextView;
+        import android.app.Activity;
+        import android.bluetooth.BluetoothAdapter;
+        import android.bluetooth.BluetoothDevice;
+        import android.bluetooth.BluetoothSocket;
+        import android.content.Context;
+        import android.content.DialogInterface;
+        import android.content.Intent;
+        import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.fragment.app.Fragment;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.Reader;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.IntBuffer;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-import java.util.UUID;
+        import androidx.appcompat.app.AlertDialog;
+        import androidx.fragment.app.Fragment;
+        import androidx.lifecycle.ViewModelProvider;
+
+        import java.io.IOException;
+        import java.io.InputStream;
+        import java.io.OutputStream;
+        import java.io.Reader;
+        import java.nio.ByteBuffer;
+        import java.nio.ByteOrder;
+        import java.nio.IntBuffer;
+        import java.util.ArrayList;
+        import java.util.List;
+        import java.util.Set;
+        import java.util.UUID;
 
 public class Timer extends Fragment {
     Chronometer chronometer;
+
+    ArrayList arrayList;
+
+    private SharedViewModel sharedViewModel;
+
+
 
     ImageButton btStart, btStop, btPause;
     ImageView maneul2;
@@ -135,6 +143,12 @@ public class Timer extends Fragment {
         run_maneul = AnimationUtils.loadAnimation(getActivity(), R.anim.run_maneul);
         handler = new Handler();
 
+        arrayList = new ArrayList();
+
+        sharedViewModel = new ViewModelProvider(getActivity()).get(SharedViewModel.class);
+
+
+
         btStart.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
@@ -194,6 +208,8 @@ public class Timer extends Fragment {
                     isResume = false;
                     btStop.setVisibility(View.VISIBLE);
                     btStart.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_play, null));
+                    sharedViewModel.setLiveData(String.format("%02d", min) + ":" + String.format("%02d", sec) + ":" + String.format("%02d", milliSec));
+
                 }
             }
         });
@@ -222,6 +238,8 @@ public class Timer extends Fragment {
         });
         return viewGroup;
     }
+
+
 
     public void connectDevice(String deviceName) {
         for(BluetoothDevice tempDevice :devices) {

@@ -17,6 +17,8 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -26,16 +28,19 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.myapplication.R;
+import com.example.myapplication.SharedViewModel;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
 public class Profile extends Fragment {
 
+    private SharedViewModel sharedViewModel1;
 
     private static final String URL = "http://61.245.248.173/garlic/insertUserDB.php";
     public static final int USER_PROFILE = 0;
@@ -46,10 +51,10 @@ public class Profile extends Fragment {
     ImageView userProfile, morning, lunch, dinner, snack;
     ViewGroup viewGroup;
     Bitmap bm;
-    TextView tx;
+    TextView userExerciseTime;
     EditText userHeight, userWeight, userStateMessage;
     TextView morningFoodName,morningFoodCal,lunchFoodName,lunchFoodCal ,
-    dinnerFoodName, dinnerFoodCal, snackFoodName, snackFoodCal;
+    dinnerFoodName, dinnerFoodCal, snackFoodName, snackFoodCal,usedCal;
     Button sbmt;
 
     @Nullable
@@ -69,14 +74,38 @@ public class Profile extends Fragment {
         dinnerFoodCal = (TextView)viewGroup.findViewById(R.id.profile_dinner_foodCal);
         snackFoodName = (TextView)viewGroup.findViewById(R.id.profile_snack_foodName);
         snackFoodCal = (TextView)viewGroup.findViewById(R.id.profile_snack_foodCal);
+        userExerciseTime = (TextView)viewGroup.findViewById(R.id.userExerciseTime);
+        userHeight = (EditText) viewGroup.findViewById(R.id.userHeight);
+        userWeight = (EditText) viewGroup.findViewById(R.id.userWeight);
+        userStateMessage = (EditText) viewGroup.findViewById(R.id.userStateMessage);
+        usedCal = (TextView)viewGroup.findViewById(R.id.usedCal);
+
+
 
 
         sbmt = (Button) viewGroup.findViewById(R.id.submit); //키, 몸무게, 상태메세지 전송 버튼
+
+
+        sharedViewModel1 = new ViewModelProvider(requireActivity()).get(SharedViewModel.class);
+
+
+        sharedViewModel1.getLiveData().observe(getViewLifecycleOwner(), new Observer<String>() {
+                    @Override
+                    public void onChanged(String s) {
+                        userExerciseTime.setText(s);
+
+                    }
+                });
+
+
 
         sbmt.setOnClickListener(new View.OnClickListener() { // 저장 버튼 누를시 발생 이벤트
             @Override
             public void onClick(View view) {
                 insertdata();
+
+
+
             }
         });
 
@@ -124,10 +153,10 @@ public class Profile extends Fragment {
         return viewGroup;
     }
 
+
+
     private void insertdata() { // 키, 몸무게, 상태 데이터베이스에 저장
-        userHeight = (EditText) viewGroup.findViewById(R.id.userHeight);
-        userWeight = (EditText) viewGroup.findViewById(R.id.userWeight);
-        userStateMessage = (EditText) viewGroup.findViewById(R.id.userStateMessage);
+
 
         final String height = userHeight.getText().toString().trim();
         final String weight = userWeight.getText().toString().trim();

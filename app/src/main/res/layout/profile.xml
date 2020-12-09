@@ -153,16 +153,22 @@
                             android:layout_marginLeft="30dp"
                             android:layout_marginTop="10dp"
                             android:layout_weight="1"
+                            android:layout_gravity="center"
                             android:fontFamily="@font/app_main_font"
                             android:text="운동 시간  " />
 
-                        <EditText
+                        <TextView
                             android:id="@+id/userExerciseTime"
+                            android:fontFamily="@font/app_main_font"
+                            android:gravity="center"
                             android:layout_width="0dp"
+                            android:layout_marginTop="10dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="30dp"
+                            android:textSize="20dp"
                             android:layout_weight="2"
-                            android:text="" />
+
+                             />
 
                     </LinearLayout>
 
@@ -181,13 +187,17 @@
                             android:fontFamily="@font/app_main_font"
                             android:text="소모된 칼로리  " />
 
-                        <EditText
-                            android:id="@+id/userSpendCal"
+                        <TextView
+                            android:id="@+id/usedCal"
+                            android:fontFamily="@font/app_main_font"
+                            android:gravity="center"
                             android:layout_width="0dp"
+                            android:layout_marginTop="10dp"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="30dp"
+                            android:textSize="20dp"
                             android:layout_weight="2"
-                            android:text="" />
+                            android:text=""/>
 
                     </LinearLayout>
                 </LinearLayout>
