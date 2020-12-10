@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.PreferenceManager;
 import com.example.myapplication.R;
 
 import java.util.ArrayList;
@@ -66,6 +67,8 @@ public class Community extends Fragment{
                    communityGroupListData.setGroup_list_name(data.getStringExtra("groupName"));
                    communityGroupListData.setGroup_list_content(data.getStringExtra("groupContents"));
                    communityGroupListData.setGroup_list_numbers(data.getStringExtra("groupNumbers"));
+                   PreferenceManager.setString(getContext(),"rebuild",data.getStringExtra("groupName"));
+                   PreferenceManager.setString(getContext(),"number",data.getStringExtra("groupNumbers"));
                    arrayList.add(communityGroupListData);
                    recycleAdapter.notifyDataSetChanged();
 

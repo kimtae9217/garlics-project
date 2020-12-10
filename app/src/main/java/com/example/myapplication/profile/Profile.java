@@ -54,7 +54,7 @@ public class Profile extends Fragment {
     ViewGroup viewGroup;
     Bitmap bm;
     TextView userExerciseTime;
-    EditText userHeight, userWeight, userStateMessage;
+    EditText userHeight, userWeight, userStateMessage,userName;
     TextView morningFoodName,morningFoodCal,lunchFoodName,lunchFoodCal ,
     dinnerFoodName, dinnerFoodCal, snackFoodName, snackFoodCal,usedCal;
     Button sbmt;
@@ -82,6 +82,7 @@ public class Profile extends Fragment {
         userWeight = (EditText) viewGroup.findViewById(R.id.userWeight);
         userStateMessage = (EditText) viewGroup.findViewById(R.id.userStateMessage);
         usedCal = (TextView)viewGroup.findViewById(R.id.usedCal);
+        userName = (EditText)viewGroup.findViewById(R.id.profile_userName);
 
 
 
@@ -109,11 +110,8 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View view) {
                 insertdata();
-                //값 저장
-                PreferenceManager.setString(getContext(),"rebuild",userHeight.getText().toString());
+                PreferenceManager.setString(getContext(),"name",userName.getText().toString());
 
-                //값 불러오기
-                usedCal.setText(PreferenceManager.getString(getContext(),"rebuild"));
 
 
 

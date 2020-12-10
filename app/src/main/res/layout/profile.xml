@@ -26,14 +26,15 @@
                 android:scaleType="fitCenter"
                 android:src="@drawable/profile_profile" />
 
-            <TextView
-                android:id="@+id/userName"
-                android:layout_width="match_parent"
+            <EditText
+                android:id="@+id/profile_userName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
+                android:layout_gravity="center"
                 android:fontFamily="@font/app_main_font"
                 android:gravity="center"
-                android:text="유저이름" />
+                android:hint="유저이름" />
 
             <View
                 android:layout_width="match_parent"

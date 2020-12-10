@@ -1,5 +1,6 @@
 package com.example.myapplication.community;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.myapplication.PreferenceManager;
 import com.example.myapplication.R;
 
 public class EnrollGroup extends AppCompatActivity {
@@ -20,11 +22,13 @@ public class EnrollGroup extends AppCompatActivity {
     RadioGroup rb;
     RadioButton radio;
     Button btn_finish;
+    Context mcontext;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.enroll_group);
+        mcontext = this;
 
         groupName = (EditText)findViewById(R.id.enroll_group_name);
         groupNumbers = (EditText)findViewById(R.id.enroll_group_numbers);
@@ -45,6 +49,7 @@ public class EnrollGroup extends AppCompatActivity {
                 intent.putExtra("groupName",groupName.getText().toString());
                 intent.putExtra("groupNumbers",groupNumbers.getText().toString());
                 intent.putExtra("groupContents",groupContents.getText().toString());
+
 
                 setResult(RESULT_OK,intent);
                 finish();

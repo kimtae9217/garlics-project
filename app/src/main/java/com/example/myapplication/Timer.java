@@ -210,7 +210,12 @@ public class Timer extends Fragment {
                     isResume = false;
                     btStop.setVisibility(View.VISIBLE);
                     btStart.setImageDrawable(ResourcesCompat.getDrawable(getResources(),R.drawable.ic_play, null));
-                    sharedViewModel.setLiveData(String.format("%02d", min) + ":" + String.format("%02d", sec) + ":" + String.format("%02d", milliSec));
+
+                    String test  = (String.format("%02d", min) + ":" + String.format("%02d", sec) + ":" + String.format("%02d", milliSec));
+                    PreferenceManager.setString(getContext(),"time",test);
+                    sharedViewModel.setLiveData(test);
+
+
 
                 }
             }

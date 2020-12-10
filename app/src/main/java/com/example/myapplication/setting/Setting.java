@@ -39,7 +39,6 @@ public class Setting extends Fragment{
         recyclerView.setAdapter(recycleAdapter);
 
         SettingListData settingListData = new SettingListData("공지사항","알림설정","비밀번호 변경","로그아웃","회원탈퇴");
-        settingListData.setNotice(PreferenceManager.getString(getContext(),"rebuild"));
         arrayList.add(settingListData);
         recycleAdapter.notifyDataSetChanged();
         return viewGroup;
