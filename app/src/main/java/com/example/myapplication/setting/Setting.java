@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.PreferenceManager;
 import com.example.myapplication.R;
 import com.example.myapplication.community.CommunityGroupListData;
 import com.example.myapplication.community.RecycleAdapter;
@@ -38,7 +39,7 @@ public class Setting extends Fragment{
         recyclerView.setAdapter(recycleAdapter);
 
         SettingListData settingListData = new SettingListData("공지사항","알림설정","비밀번호 변경","로그아웃","회원탈퇴");
-
+        settingListData.setNotice(PreferenceManager.getString(getContext(),"rebuild"));
         arrayList.add(settingListData);
         recycleAdapter.notifyDataSetChanged();
         return viewGroup;

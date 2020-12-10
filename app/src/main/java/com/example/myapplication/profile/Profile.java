@@ -1,5 +1,6 @@
 package com.example.myapplication.profile;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -27,6 +28,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.myapplication.PreferenceManager;
 import com.example.myapplication.R;
 import com.example.myapplication.SharedViewModel;
 
@@ -56,6 +58,7 @@ public class Profile extends Fragment {
     TextView morningFoodName,morningFoodCal,lunchFoodName,lunchFoodCal ,
     dinnerFoodName, dinnerFoodCal, snackFoodName, snackFoodCal,usedCal;
     Button sbmt;
+    String test;
 
     @Nullable
     @Override
@@ -83,6 +86,9 @@ public class Profile extends Fragment {
 
 
 
+
+
+
         sbmt = (Button) viewGroup.findViewById(R.id.submit); //키, 몸무게, 상태메세지 전송 버튼
 
 
@@ -103,6 +109,12 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View view) {
                 insertdata();
+                //값 저장
+                PreferenceManager.setString(getContext(),"rebuild",userHeight.getText().toString());
+
+                //값 불러오기
+                usedCal.setText(PreferenceManager.getString(getContext(),"rebuild"));
+
 
 
 
