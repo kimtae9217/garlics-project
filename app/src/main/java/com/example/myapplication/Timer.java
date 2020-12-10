@@ -62,6 +62,7 @@ public class Timer extends Fragment {
     int sec, min, milliSec, Kcal;
     int sum = 0;
     float average = 0f;
+    public String Kcal_2;
     public String Out_put;
     public String K_cal;
     ViewGroup viewGroup;
@@ -237,8 +238,12 @@ public class Timer extends Fragment {
                     milliSec = 0;
                     chronometer.setText("00:00:00");
                     receiveData(); //블루투스 데이터 받아오는 기능
-                    K_cal = Out_put;
-                    textViewReceive.setText(K_cal + "\n");
+                    Kcal_2 = Out_put;
+                    /*if (Kcal_2 == null) {
+                        textViewReceive.setText("소모한 칼로리 : " + "\n");
+                    }*/
+                    textViewReceive.setText(Kcal_2 + "\n");
+                    PreferenceManager.setString(getContext(),"USED KCAL",Kcal_2);
 
                 }
             }
@@ -311,13 +316,9 @@ public class Timer extends Fragment {
                                     handler.post(new Runnable() {
                                         @Override
                                         public void run() {
-                                            //String str_BPM = new String(text);
                                             double BPM = Double.parseDouble(text);
-                                            double YM2 = BM*(BPM-age) + mC + 0.3645; // 운동 후 남성 단위 시간당 칼로리 소비량 = BM(X-A) + C + 0.3645
-                                            double MK = 0.5*(BPM-Xm)*(YM2-YM1); // = 0.5*(maleBPM_2-Xm)*(YM2-YM1) // 운동으로 소비한 칼로리 최종 소비량 - 남성
-                                            //Kcal = (int) ((-55.969+(0.6309*140/*심박*/)+(0.1988*63/*몸무게*/)+(0.2017*25/*나이*/))/4.184*60*(0.016666*sec));
-                                            Out_put = Double.toString(MK);
-                                            //textViewReceive.setText(Out_put + "\n"); // 출력 함수
+                                            Kcal = (int) ((-55.969+(0.6309*BPM)+(0.1988*70)+(0.2017*25/*나이*/))/4.184*60*(0.016666*sec));
+                                            Out_put = Integer.toString(Kcal);
                                         }
                                     });
                                 }

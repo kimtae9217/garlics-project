@@ -100,6 +100,7 @@ public class Profile extends Fragment {
                     @Override
                     public void onChanged(String s) {
                         userExerciseTime.setText(s);
+                        usedCal.setText(PreferenceManager.getString(getContext(),"USED KCAL"));
 
                     }
                 });
@@ -110,6 +111,7 @@ public class Profile extends Fragment {
             @Override
             public void onClick(View view) {
                 insertdata();
+
                 PreferenceManager.setString(getContext(),"name",userName.getText().toString());
 
 
